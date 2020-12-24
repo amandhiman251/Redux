@@ -1,13 +1,12 @@
-import * as actions from './actions';
+import * as actions from '../actions';
 
 
 const initialState = {
-    counter:0,
-    results:[]
+    counter:0
 }
 
 
-const reducer = (state = initialState, action) => {
+const counterReducer = (state = initialState, action) => {
 
     switch(action.type){
         case actions.INCREMENT:
@@ -30,21 +29,9 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter-action.val
             };
-        case actions.STORE_RESULT:
-            return{
-                ...state,
-                results: state.results.concat({id: Math.random(), value: state.counter})
-            };
-        case actions.DELETE_RESULT:
-            const updatedArray = state.results.filter(result => {
-               return( result.id !== action.resultElId)});
-            return{
-                ...state,
-                results: updatedArray
-                }
 
     }
     return state
 }
 
-export default reducer;
+export default counterReducer;
