@@ -29,9 +29,10 @@ const counterReducer = (state = initialState, action) => {
                 ...state,
                 counter: state.counter-action.val
             };
+        default:
+            return state
 
     }
-    return state
 }
 
 export default counterReducer;

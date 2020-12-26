@@ -20,10 +20,10 @@ const resultsReducer = (state = initialState, action) => {
             return{
                 ...state,
                 results: updatedArray
-                }
-
+                };
+                default:
+                    return state
     }
-    return state
 }
 
 export default resultsReducer;
