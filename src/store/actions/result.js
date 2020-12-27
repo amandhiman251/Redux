@@ -10,8 +10,8 @@ export const strResult = (result) => {
 export const store_result = (result) => {
         return dispatch=>{
             setTimeout(() => {
-                const updatedResult = result*2;
-                dispatch(strResult(updatedResult));
+                //const updatedResult = result*2;
+                dispatch(strResult(result));
                 }, 2000);
         }
     };
