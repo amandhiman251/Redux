@@ -1,4 +1,4 @@
-import * as actions from '../actions/actions';
+import * as actionTypes from '../actions/actionsTypes';
 
 
 const initialState = {
@@ -9,12 +9,12 @@ const initialState = {
 const resultsReducer = (state = initialState, action) => {
 
     switch(action.type){
-        case actions.STORE_RESULT:
+        case actionTypes.STORE_RESULT:
             return{
                 ...state,
                 results: state.results.concat({id: Math.random(), value: action.result})
             };
-        case actions.DELETE_RESULT:
+        case actionTypes.DELETE_RESULT:
             const updatedArray = state.results.filter(result => {
                return( result.id !== action.resultElId)});
             return{
