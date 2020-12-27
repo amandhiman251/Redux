@@ -27,10 +27,12 @@ class Counter extends Component {
           label="Subtract 5"
           clicked={this.props.onSubtract5Counter}
         />
+        <br/>
         <button onClick={()=>this.props.onStoreResult(this.props.ctr)}>Store Results</button>
         <ul>
           {this.props.storedResults.map(strResult => {
-              return(<li key={strResult.id} onClick={() => this.props.onDeleteResult(strResult.id)}>{strResult.value}</li>)
+              return(
+              <li key={strResult.id} onClick={() => this.props.onDeleteResult(strResult.id)}>{strResult.value}</li>)
           })}
         </ul>
       </div>
