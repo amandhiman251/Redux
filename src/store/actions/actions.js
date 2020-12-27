@@ -27,12 +27,22 @@ export const subtract5 = (value) => {
         val:value
     }
 }
-export const store_result = (result) => {
+
+export const strResult = (result) => {
     return{
         type: STORE_RESULT,
-        result:result
+        result: result
     }
 }
+
+export const store_result = (result) => {
+        return dispatch=>{
+            setTimeout(() => {
+                dispatch(strResult(result));
+                }, 2000);
+        }
+    };
+    
 export const delete_result = (id) => {
     return{
         type: DELETE_RESULT,
